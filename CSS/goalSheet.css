@@ -1,0 +1,499 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s, border-bottom 0.5s;
+}
+header select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    transition: background-color 0.5s;
+}
+
+/* Theme-specific styles for the active state of priority buttons */
+body.light #priority-buttons button.active {
+    border: 2px solid #000;
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+body.dark #priority-buttons button.active {
+    border: 2px solid #fff;
+    background-color: #666;
+    color: #fff;
+}
+
+body.high-contrast #priority-buttons button.active {
+    border: 2px solid #fff;
+    background-color: #333;
+    color: #fff;
+}
+
+body.fun-wacky #priority-buttons button.active {
+    border: 2px solid #000;
+    background-color: #ff5722;
+    color: #fff;
+}
+
+body.neutral #priority-buttons button.active {
+    border: 2px solid #000;
+    background-color: #a0a0a0;
+    color: #000;
+}
+
+/* Quote Container Styling */
+#quote-container {
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-right: 20px; /* Space between the quotes box and the form */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+#quote-title {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: 25PX;
+}
+
+/* Theme-specific Quote Styling */
+body.light #quote-container {
+    background-color: #ffffff;
+}
+
+body.light blockquote {
+    color: #333;
+}
+
+body.dark #quote-container {
+    background-color: #222;
+}
+
+body.dark blockquote {
+    color: #ccc;
+}
+
+body.high-contrast #quote-container {
+    background-color: #000;
+}
+
+body.high-contrast blockquote {
+    color: #0f0;
+}
+
+body.fun-wacky #quote-container {
+    background-color: #ffeb3b;
+}
+
+body.fun-wacky blockquote {
+    color: #ff5722;
+}
+
+body.neutral #quote-container {
+    background-color: #dcdcdc;
+}
+
+body.neutral blockquote {
+    color: #000;
+}
+
+#quote-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #8d8d8d;
+    text-align: center;
+}
+
+/* Goal Form Styles */
+#goal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+#goal-form input, #goal-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.5s;
+}
+
+#goal-form button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#goal-form button:hover {
+    background-color: darken(#007bff, 10%);
+}
+
+/* Goal Item Styles */
+#goals-container {
+    margin-top: 2rem;
+}
+
+.goal-item {
+    padding: 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s, background-color 0.5s, border-color 0.5s;
+    position: relative;
+    margin-left: 30px;
+}
+
+.goal-item:hover {
+    transform: scale(1.02);
+}
+
+.drag-handle {
+    cursor: grab;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 0.25rem;
+    text-align: center;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.modal-content p {
+    margin: 0 0 1rem;
+}
+
+.modal-content button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:first-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-content button:last-child {
+    background-color: #6c757d;
+    color: white;
+    margin-left: 1rem;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    background-color: #4caf50;
+    width: 0;
+    border-radius: 10px;
+}
+.progress-bar-fill span {
+    position: relative;
+    top: -3px; /* Move the text up a little */
+    }
+
+/* Animation for Fun Wacky Theme */
+@keyframes colorChange {
+    0% { background-color: #ff0; }
+    25% { background-color: #f00; }
+    50% { background-color: #0f0; }
+    75% { background-color: #00f; }
+    100% { background-color: #ff0; }
+}
+
+/* Theme Styles */
+body.light {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+body.light header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+body.light main {
+    background-color: #ffffff;
+}
+
+body.light #goal-form {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+}
+
+body.light #goal-form input, #goal-form textarea {
+    border: 1px solid #ced4da;
+}
+
+body.light #goal-form button {
+    background-color: #007bff;
+}
+
+body.light .goal-item {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+}
+
+body.light footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid rgba(221, 238, 238, 0.177);
+}
+body.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark header {
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+body.dark main {
+    background-color: #333;
+}
+
+body.dark #goal-form {
+    background-color: #333;
+    border: 1px solid #555;
+}
+
+body.dark #goal-form input, #goal-form textarea {
+    border: 1px solid #555;
+}
+
+body.dark #goal-form button {
+    background-color: #007bff;
+}
+
+body.dark .goal-item {
+    background-color: #333;
+    border: 1px solid #555;
+}
+
+body.dark footer {
+    background-color: #444;
+    border-top: 1px solid #555;
+}
+
+body.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+body.high-contrast header {
+    background-color: #111;
+    border-bottom: 1px solid #333;
+}
+
+body.high-contrast main {
+    background-color: #000;
+}
+
+body.high-contrast #goal-form {
+    background-color: #000;
+    border: 1px solid #333;
+}
+
+body.high-contrast #goal-form input, #goal-form textarea {
+    border: 1px solid #333;
+}
+
+body.high-contrast #goal-form button {
+    background-color: #007bff;
+}
+
+body.high-contrast .goal-item {
+    background-color: #000;
+    border: 1px solid #333;
+}
+
+body.high-contrast footer {
+    background-color: #111;
+    border-top: 1px solid #333;
+}
+
+body.fun-wacky {
+    background-color: #ffeb3b;
+    color: #333;
+    animation: colorChange 10s infinite;
+}
+
+body.fun-wacky header {
+    background-color: #ffc107;
+    border-bottom: 1px solid #ff9800;
+}
+
+body.fun-wacky main {
+    background-color: #ffeb3b;
+}
+
+body.fun-wacky #goal-form {
+    background-color: #3bffdb;
+    border: 1px solid #ff9800;
+}
+
+body.fun-wacky #goal-form input, #goal-form textarea {
+    border: 1px solid #ff9800;
+}
+
+body.fun-wacky #goal-form button {
+    background-color: #ff9800;
+}
+
+body.fun-wacky .goal-item {
+    background-color: #3bffdb;
+    border: 1px solid #ff9800;
+}
+
+body.fun-wacky footer {
+    background-color: #ffc107;
+    border-top: 1px solid #ff9800;
+}
+
+body.fun-wacky #quote-title {
+    z-index: 1; /* Add this line to bring the label text to the front */
+    position: relative; /* Add this line to make the z-index work */
+}
+
+body.fun-wacky #quote-container {
+    background-color: #ffeb3b;
+    animation: colorChange 10s infinite, spin 5s linear infinite;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: -1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+body.neutral {
+    background-color: #dcdcdc;
+    color: #333;
+}
+
+body.neutral header {
+    background-color: #a7a7a7;
+    border-bottom: 1px solid #ccc;
+}
+
+body.neutral main {
+    background-color: #dcdcdc;
+}
+
+body.neutral #goal-form {
+    background-color: #8f8b8b;
+    border: 1px solid #ccc;
+}
+
+body.neutral #goal-form input, #goal-form textarea {
+    border: 1px solid #ccc;
+}
+
+body.neutral #goal-form button {
+    background-color: #007bff;
+}
+
+body.neutral .goal-item {
+    background-color: #c5c1c1;
+    border: 1px solid #ccc;
+}
+
+body.neutral footer {
+    background-color: #b3b3b3;
+    border-top: 1px solid #ccc;
+}
